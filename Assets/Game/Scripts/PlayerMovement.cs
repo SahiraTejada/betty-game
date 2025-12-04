@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         Vector2 input = new Vector2(joystick.Horizontal, 0);
-        rb.MovePosition((Vector2)transform.position  + input * 10 * Time.deltaTime);
+        rb.linearVelocity = new Vector2(joystick.Horizontal * 500 * Time.deltaTime, this.rb.linearVelocity.y);
 
         if (input.x > 0)
         {
@@ -30,6 +30,11 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);
              GetComponent<Animator>().SetInteger("Mode", 1);
+        }else{
+            GetComponent<Animator>().SetInteger("Mode", 0);
         }
+    }
+    public void Jump(){
+        rb.linearVelocity = new Vector2(0, 15);
     }
 }
