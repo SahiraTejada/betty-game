@@ -21,6 +21,16 @@ public class PlayerMovement : MonoBehaviour
         Vector2 input = new Vector2(joystick.Horizontal, 0);
         rb.linearVelocity = new Vector2(joystick.Horizontal * 500 * Time.deltaTime, this.rb.linearVelocity.y);
 
+        // Clamp para mantener el player dentro del canvas
+        Vector3 clampedPosition = transform.position;
+        clampedPosition.x = Mathf.Clamp(clampedPosition.x, -6.1f, 6.1f);
+        clampedPosition.y = Mathf.Clamp(clampedPosition.y, -4.17f, 4.549f);
+        transform.position = clampedPosition;
+
+        // Debug.Log("clampedPosition: " + clampedPosition);
+        // Debug.Log("clampedPosition.x: " + clampedPosition.x);
+        // Debug.Log("clampedPosition.y: " + clampedPosition.y);
+
         if (input.x > 0)
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
