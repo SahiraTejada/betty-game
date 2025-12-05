@@ -281,7 +281,8 @@ Transform:
   m_LocalPosition: {x: 1.87, y: 0.16, z: 0}
   m_LocalScale: {x: 0.1772, y: 0.21010417, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 882725693}
   m_Father: {fileID: 2097527504}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &117534216
@@ -432,63 +433,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &384918905
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 7885720852516718579, guid: f4c700add082a4b9bbc6edc745e7b589, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.24
-      objectReference: {fileID: 0}
-    - target: {fileID: 7885720852516718579, guid: f4c700add082a4b9bbc6edc745e7b589, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 7885720852516718579, guid: f4c700add082a4b9bbc6edc745e7b589, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7885720852516718579, guid: f4c700add082a4b9bbc6edc745e7b589, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7885720852516718579, guid: f4c700add082a4b9bbc6edc745e7b589, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7885720852516718579, guid: f4c700add082a4b9bbc6edc745e7b589, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7885720852516718579, guid: f4c700add082a4b9bbc6edc745e7b589, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7885720852516718579, guid: f4c700add082a4b9bbc6edc745e7b589, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7885720852516718579, guid: f4c700add082a4b9bbc6edc745e7b589, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7885720852516718579, guid: f4c700add082a4b9bbc6edc745e7b589, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7935252645911925530, guid: f4c700add082a4b9bbc6edc745e7b589, type: 3}
-      propertyPath: m_Name
-      value: Bullet
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f4c700add082a4b9bbc6edc745e7b589, type: 3}
 --- !u!1 &471018219
 GameObject:
   m_ObjectHideFlags: 0
@@ -971,6 +915,9 @@ MonoBehaviour:
   rb: {fileID: 845034711}
   Sign: {fileID: 845034710}
   Hand: {fileID: 2097527504}
+  Bullet: {fileID: 7935252645911925530, guid: f4c700add082a4b9bbc6edc745e7b589, type: 3}
+  Tip: {fileID: 882725693}
+  fireRate: 0.5
 --- !u!1 &792572117
 GameObject:
   m_ObjectHideFlags: 0
@@ -1260,6 +1207,37 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &882725692
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 882725693}
+  m_Layer: 0
+  m_Name: Tip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &882725693
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882725692}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.9, y: 0.49, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 117534215}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1222320557
 GameObject:
   m_ObjectHideFlags: 0
@@ -1955,7 +1933,7 @@ GameObject:
   - component: {fileID: 1479478130}
   - component: {fileID: 1479478131}
   m_Layer: 0
-  m_Name: Tip
+  m_Name: SignImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2438,18 +2416,6 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: Manager, Assembly-CSharp
-          m_MethodName: Down_RightJoy
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
         - m_Target: {fileID: 699459790}
           m_TargetAssemblyTypeName: PlayerShooting, Assembly-CSharp
           m_MethodName: StartShooting
@@ -2466,18 +2432,6 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: Manager, Assembly-CSharp
-          m_MethodName: Up_RightJoy
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
         - m_Target: {fileID: 699459790}
           m_TargetAssemblyTypeName: PlayerShooting, Assembly-CSharp
           m_MethodName: EndShooting
@@ -3275,7 +3229,6 @@ SceneRoots:
   - {fileID: 2048144920}
   - {fileID: 699459785}
   - {fileID: 845034710}
-  - {fileID: 384918905}
   - {fileID: 2160843}
   - {fileID: 1438387141}
   - {fileID: 679251440131540398}
