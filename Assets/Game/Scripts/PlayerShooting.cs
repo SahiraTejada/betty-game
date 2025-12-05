@@ -27,6 +27,7 @@ public class PlayerShooting : MonoBehaviour
         newPosition.x = Mathf.Clamp(newPosition.x, -9.8f, +9.8f);
         newPosition.y = Mathf.Clamp(newPosition.y, -4.17f, +4.549f);
         rb.MovePosition(newPosition);
+        
         Vector3 relative = Hand.InverseTransformPoint(Sign.position);
         float angle = Mathf.Atan2(relative.y, relative.x) * Mathf.Rad2Deg;
         Hand.Rotate(0, 0, angle);
