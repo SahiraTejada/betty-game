@@ -5,6 +5,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public Joystick joystick;
     public Rigidbody2D rb;
+    public Manager Manager;
     void Start()
     {
         
@@ -34,12 +35,22 @@ public class PlayerMovement : MonoBehaviour
         if (input.x > 0)
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
+            if(Manager.RightJoy==0){
             GetComponent<Animator>().SetInteger("Mode", 1);
+            }
+               if(Manager.RightJoy==1){
+            GetComponent<Animator>().SetInteger("Mode", 2);
+            }
         }
         else if (input.x < 0)
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);
-             GetComponent<Animator>().SetInteger("Mode", 1);
+                   if(Manager.RightJoy==0){
+            GetComponent<Animator>().SetInteger("Mode", 1);
+            }
+               if(Manager.RightJoy==1){
+            GetComponent<Animator>().SetInteger("Mode", 2);
+            }
         }else{
             GetComponent<Animator>().SetInteger("Mode", 0);
         }

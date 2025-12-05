@@ -9,6 +9,7 @@ public class PlayerShooting : MonoBehaviour
     public Transform Hand;
     public GameObject Bullet;
     public Transform Tip;
+    public Manager Manager;
 
     private Animator animator;
     private bool isShooting = false;
@@ -39,6 +40,13 @@ public class PlayerShooting : MonoBehaviour
     {
         Debug.Log("StartShooting llamado");
         isShooting = true;
+
+        // Llamar al Manager para activar LeftJoy
+        if (Manager != null)
+        {
+            Manager.Down_LeftJoy();
+        }
+
         // Activar animación de shooting
         if (animator != null)
         {
@@ -51,6 +59,13 @@ public class PlayerShooting : MonoBehaviour
     {
         Debug.Log("EndShooting llamado");
         isShooting = false;
+
+        // Llamar al Manager para desactivar LeftJoy
+        if (Manager != null)
+        {
+            Manager.Up_LeftJoy();
+        }
+
         // Volver a idle
         if (animator != null)
         {

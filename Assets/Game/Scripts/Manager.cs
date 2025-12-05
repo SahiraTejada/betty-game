@@ -2,15 +2,23 @@ using UnityEngine;
 
 public class Manager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public int LeftJoy;
+    public int RightJoy;
 
-    // Update is called once per frame
-    void Update()
+    public void Down_LeftJoy()
     {
-        
+        LeftJoy = 1;
+    }
+    public void Up_LeftJoy()
+    {
+        LeftJoy = 0;
+    }
+    public void Down_RightJoy()
+    {
+        RightJoy = 1;
+    }
+        public void Up_RightJoy()
+    {
+        RightJoy = 0;
     }
 }
