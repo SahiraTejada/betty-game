@@ -11,6 +11,8 @@ public class Enemy : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        // Congelar solo el eje X para que pueda caer pero no moverse horizontalmente
+        rb.constraints = RigidbodyConstraints2D.FreezePositionX;
         InvokeRepeating("Shooting_Enemy", 1, 1f);
     }
 
@@ -21,14 +23,12 @@ public class Enemy : MonoBehaviour
     }
     void FixedUpdate()
     {
-        Vector3 relative = GunPivot.InverseTransformPoint(Player.transform.position);
-        float angle = Mathf.Atan2(relative.y, relative.x) * Mathf.Rad2Deg;
-        GunPivot.Rotate(0, 0, angle);
-        if(this.transform.position.x - Player.transform.position.x > 0){
-            GunPivot.rotation = Quaternion.Euler(0, 180, GunPivot.rotation.eulerAngles.z);
-        }else{
-            GunPivot.rotation = Quaternion.Euler(0, 0, GunPivot.rotation.eulerAngles.z);
-        }
+        // Calcular la dirección desde el arma hacia el jugador
+        Vector2 direction = (Player.transform.position - GunPivot.position).normalized;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+        // Aplicar la rotación directamente
+        GunPivot.rotation = Quaternion.Euler(0, 0, angle);
     }
 
     public void Shooting_Enemy(){
