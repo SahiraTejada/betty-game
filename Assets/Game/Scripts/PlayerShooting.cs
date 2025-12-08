@@ -38,7 +38,7 @@ public class PlayerShooting : MonoBehaviour
     // Método para iniciar el disparo - Conecta este al Event Trigger OnPointerDown del joystick
     public void StartShooting()
     {
-        Debug.Log("StartShooting llamado");
+        // Debug.Log("StartShooting llamado");
         isShooting = true;
 
         // Llamar al Manager para activar LeftJoy
@@ -57,7 +57,7 @@ public class PlayerShooting : MonoBehaviour
     // Método para detener el disparo - Conecta este al Event Trigger OnPointerUp del joystick
     public void EndShooting()
     {
-        Debug.Log("EndShooting llamado");
+        // Debug.Log("EndShooting llamado");
         isShooting = false;
 
         // Llamar al Manager para desactivar LeftJoy
@@ -89,17 +89,17 @@ public class PlayerShooting : MonoBehaviour
     }
 
     public void Shooting(){
-       Debug.Log("=== SHOOTING LLAMADO ===");
-       Debug.Log("Tip position: " + Tip.position);
-       Debug.Log("Sign position: " + Sign.position);
+    //    Debug.Log("=== SHOOTING LLAMADO ===");
+    //    Debug.Log("Tip position: " + Tip.position);
+    //    Debug.Log("Sign position: " + Sign.position);
 
        GameObject bullet = Instantiate(Bullet, Tip.position, Quaternion.identity);
-       Debug.Log("Bullet instanciada: " + bullet.name);
+    //    Debug.Log("Bullet instanciada: " + bullet.name);
 
        Vector2 direction = (Sign.position - Tip.position).normalized;
-       Debug.Log("Direccion: " + direction);
+    //    Debug.Log("Direccion: " + direction);
 
        bullet.GetComponent<Rigidbody2D>().linearVelocity = direction * 30;
-       Debug.Log("Velocidad aplicada: " + (direction * 30));
+    //    Debug.Log("Velocidad aplicada: " + (direction * 30));
     }
 }

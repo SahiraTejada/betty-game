@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
+   public GameObject Destroy_Particle;
 
-    public GameObject Destroy_Particle;
+   private void OnTriggerEnter2D(Collider2D collision)
+   {
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        GameObject particle = Instantiate(Destroy_Particle, this.transform.position, Quaternion.identity);
-        Destroy(particle, 1f);
-        Destroy(this.gameObject);
-    }
+    GameObject particle = Instantiate(Destroy_Particle, this.transform.position, Quaternion.identity);
+    Destroy(particle, 1f);
+    Destroy(this.gameObject);
+   }
 }

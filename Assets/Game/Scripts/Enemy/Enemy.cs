@@ -33,12 +33,12 @@ public class Enemy : MonoBehaviour
 
     public void Shooting_Enemy(){
         GameObject E_bullet = Instantiate(Bullet, Tip.position, Quaternion.identity);
-        Debug.Log("Bullet instanciada: " + E_bullet.name);
+        // Debug.Log("Bullet instanciada: " + E_bullet.name);
 
        Vector2 direction = (Player.transform.position - Tip.position).normalized;
-       Debug.Log("Direccion: " + direction);
+    //    Debug.Log("Direccion: " + direction);
 
        E_bullet.GetComponent<Rigidbody2D>().linearVelocity = direction * 15;
-       Debug.Log("Velocidad aplicada: " + (direction * 30));
+    //    Debug.Log("Velocidad aplicada: " + (direction * 30));
     }   
 }

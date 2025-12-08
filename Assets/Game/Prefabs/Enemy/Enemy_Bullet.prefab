@@ -4848,8 +4848,8 @@ GameObject:
   - component: {fileID: 1731311778088350500}
   - component: {fileID: 3925430830066862491}
   - component: {fileID: -1148243046274492776}
-  - component: {fileID: 5190460011552518641}
   - component: {fileID: 4109637356184238356}
+  - component: {fileID: 2596443575748449441}
   m_Layer: 0
   m_Name: Enemy_Bullet
   m_TagString: Enemy_Bullet
@@ -4867,7 +4867,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.797, y: -3.372, z: 0}
-  m_LocalScale: {x: 0.21686804, y: 0.19558479, z: 1}
+  m_LocalScale: {x: 0.18172003, y: 0.16908304, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 640091157805826898}
@@ -4921,7 +4921,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 6375380345658830432, guid: 0d73be787cdcb4472bffc79a8a6397fc, type: 3}
+  m_Sprite: {fileID: 3901687008268635053, guid: c6bd8856ed6bb46819bb9e0fd51b1fc8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4990,7 +4990,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.19607884
+        value: 0.32353282
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -5011,7 +5011,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.990566, g: 0.7989943, b: 0.8495479, a: 1}
+      key0: {r: 0.85882354, g: 0.95686275, b: 0.99607843, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -5019,7 +5019,7 @@ TrailRenderer:
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
+      ctime0: 39128
       ctime1: 65535
       ctime2: 0
       ctime3: 0
@@ -5066,7 +5066,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -5076,10 +5076,23 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
---- !u!61 &5190460011552518641
-BoxCollider2D:
+--- !u!114 &4109637356184238356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7284236751215528876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0359cf341049442da8221ce16c9c607b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyBullet
+  Destroy_Particle: {fileID: 3192155238953445297, guid: 4a8646f22e288472996cf787529344ca, type: 3}
+--- !u!58 &2596443575748449441
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5112,30 +5125,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.83, y: 1.07}
-    newSize: {x: 1.83, y: 1.07}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1.83, y: 1.07}
-  m_EdgeRadius: 0
---- !u!114 &4109637356184238356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7284236751215528876}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0359cf341049442da8221ce16c9c607b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyBullet
+  m_Offset: {x: 0.005610231, y: -0.005977842}
+  m_Radius: 0.7406277
 --- !u!1 &7421795481150726786
 GameObject:
   m_ObjectHideFlags: 0
