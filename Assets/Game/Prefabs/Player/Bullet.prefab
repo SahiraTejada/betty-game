@@ -4850,6 +4850,7 @@ GameObject:
   - component: {fileID: 6916221955810852529}
   - component: {fileID: 7054685913819889839}
   - component: {fileID: 1335444699365326454}
+  - component: {fileID: 5713237978547010426}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Player_Bullet
@@ -5107,7 +5108,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -5165,3 +5166,20 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &5713237978547010426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7935252645911925530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29bdb9fb9e6d948a880433244842c9f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerBullet
+  Destroy_Particle: {fileID: 4184263501344467267, guid: ae624628ecba042e8915522a093e6b2d, type: 3}
+  particleScale: 0.5
+  collisionDelay: 0.05
+  autoDestroyTime: 3
+  particleLifetime: 2
