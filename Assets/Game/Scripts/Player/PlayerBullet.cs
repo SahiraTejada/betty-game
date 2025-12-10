@@ -18,10 +18,16 @@ public class PlayerBullet : MonoBehaviour
     [Tooltip("Time before the destruction particle is destroyed")]
     public float particleLifetime = 2f;
 
+    [Tooltip("Force applied to enemies on impact")]
+    public float impactForce = 5f;
+
     private bool canCollide = false;
+    private Rigidbody2D rb;
 
     private void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
+
         // Enable collision detection after a short delay to avoid hitting shooter
         Invoke(nameof(EnableCollision), collisionDelay);
 
@@ -44,7 +50,11 @@ public class PlayerBullet : MonoBehaviour
         if (other.CompareTag("Player")) return;
 
         if (other.gameObject.tag == "Enemy") {
-            other.gameObject.GetComponent<Enemy>().Damage(Random.Range(10,20));
+            // Calculate impact direction from bullet velocity
+            Vector2 impactDirection = rb.linearVelocity.normalized;
+
+            // Apply damage with physics impact
+            other.gameObject.GetComponent<Enemy>().Damage(Random.Range(10,20), impactDirection, impactForce);
         };
 
         // Spawn destruction particle effect

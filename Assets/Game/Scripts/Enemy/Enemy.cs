@@ -43,9 +43,14 @@ public class Enemy : MonoBehaviour
     //    Debug.Log("Velocidad aplicada: " + (direction * 30));
     }   
 
-    public void Damage(int dmg){
+    public void Damage(int dmg, Vector2 impactDirection = default, float impactForce = 0f){
         Health -= dmg;
         slider.value = Health/100;
+
+        // Apply physics impact if force is provided
+        if(impactForce > 0 && impactDirection != Vector2.zero){
+            rb.AddForce(impactDirection.normalized * impactForce, ForceMode2D.Impulse);
+        }
 
         if(Health <= 0){
             print("Die");
