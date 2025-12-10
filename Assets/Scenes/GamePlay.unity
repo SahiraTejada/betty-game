@@ -428,6 +428,8 @@ MonoBehaviour:
   GunPivot: {fileID: 736401667}
   Bullet: {fileID: 7284236751215528876, guid: 6f81b4fa7cdc344de94aae22679b3c7b, type: 3}
   Tip: {fileID: 679330023}
+  Health: 100
+  slider: {fileID: 1628013121}
 --- !u!1 &117534214
 GameObject:
   m_ObjectHideFlags: 0
@@ -699,49 +701,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!21 &503755689
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/IndependentRoundedCorners
-  m_Shader: {fileID: 4800000, guid: d3beb88e61f88ca4393acdefb005fa70, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
-    - _halfSize: {r: 29.976082, g: 11.958149, b: 0, a: 0}
-    - _r: {r: 11.7, g: 11.7, b: 11.7, a: 11.7}
-    - _rect2props: {r: 0.0000019073486, g: -0.0000038146973, b: 21.378832, a: 21.378832}
-  m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!1 &542647212
 GameObject:
   m_ObjectHideFlags: 0
@@ -867,7 +826,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 503755689}
+  m_Material: {fileID: 723174973}
   m_Color: {r: 0.4862745, g: 0.8352941, b: 0.46666667, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -906,7 +865,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Nobi.UiRoundedCorners::Nobi.UiRoundedCorners.ImageWithIndependentRoundedCorners
   r: {x: 11.7, y: 11.7, z: 11.7, w: 11.7}
-  rect2props: {x: 0.0000019073486, y: -0.0000038146973, z: 21.378832, w: 21.378832}
+  rect2props: {x: 0.000015258789, y: 0, z: 101.11727, w: 101.11727}
   image: {fileID: 599579999}
 --- !u!1 &605744502
 GameObject:
@@ -1438,6 +1397,49 @@ MonoBehaviour:
   Tip: {fileID: 882725693}
   Manager: {fileID: 1682184300}
   fireRate: 0.5
+--- !u!21 &723174973
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/IndependentRoundedCorners
+  m_Shader: {fileID: 4800000, guid: d3beb88e61f88ca4393acdefb005fa70, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _OuterUV: {r: 0, g: 0, b: 1, a: 1}
+    - _halfSize: {r: 142.74326, g: 11.958149, b: 0, a: 0}
+    - _r: {r: 11.7, g: 11.7, b: 11.7, a: 11.7}
+    - _rect2props: {r: 0.000015258789, g: 0, b: 101.11727, a: 101.11727}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!1 &736401666
 GameObject:
   m_ObjectHideFlags: 0
@@ -3158,7 +3160,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.21
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

@@ -34,14 +34,18 @@ public class PlayerBullet : MonoBehaviour
         canCollide = true;
     }
 
-   
-   private  void OnTriggerEnter2D(Collider2D other)
+
+  private void OnTriggerEnter2D(Collider2D other)
     {
             // Don't detect collisions until enabled
         if (!canCollide) return;
 
         // Ignore collisions with Player
         if (other.CompareTag("Player")) return;
+
+        if (other.gameObject.tag == "Enemy") {
+            other.gameObject.GetComponent<Enemy>().Damage(Random.Range(10,20));
+        };
 
         // Spawn destruction particle effect
         SpawnDestructionParticle();

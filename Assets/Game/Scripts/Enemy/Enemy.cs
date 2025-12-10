@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -7,12 +8,12 @@ public class Enemy : MonoBehaviour
     public Transform GunPivot;
     public GameObject Bullet;
     public Transform Tip;
+    public float Health = 100;
+    public Slider slider;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        // Congelar solo el eje X para que pueda caer pero no moverse horizontalmente
-        rb.constraints = RigidbodyConstraints2D.FreezePositionX;
         InvokeRepeating("Shooting_Enemy", 1, 1f);
     }
 
@@ -41,4 +42,17 @@ public class Enemy : MonoBehaviour
        E_bullet.GetComponent<Rigidbody2D>().linearVelocity = direction * 15;
     //    Debug.Log("Velocidad aplicada: " + (direction * 30));
     }   
+
+    public void Damage(int dmg){
+        Health -= dmg;
+        slider.value = Health/100;
+
+        if(Health <= 0){
+            print("Die");
+            Destroy(this.gameObject);
+        }
+        // else{
+        //     slider.value = Health/100;
+        // }
+    }
 }
